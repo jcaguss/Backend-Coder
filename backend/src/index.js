@@ -18,7 +18,7 @@ import MongoStore from "connect-mongo";
 import { __dirname } from "./path.js";
 import path from "path";
 
-const whiteList = ["http://localhost:5175"];
+const whiteList = ["https://frontend-coderhouse.onrender.com"];
 
 const corsOptions = {
   origin: function (origin, callback) {
