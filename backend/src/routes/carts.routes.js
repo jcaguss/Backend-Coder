@@ -8,9 +8,9 @@ cartRouter.get('/', getCart)
 cartRouter.get('/:id', passportError('jwt'), authorization('user'), authorization('admin'), getCartById)
 cartRouter.post('/', postCart)
 cartRouter.delete('/:id', passportError('jwt'), authorization('user'), authorization('admin'), deleteProdtsCart)
-cartRouter.put('/:id', passportError('jwt'), authorization('user'), authorization('admin'), putCartById)
+cartRouter.put('/:id', passportError('jwt'), authorization('admin'), putCartById)
 cartRouter.post('/:cid/products/:pid', passportError('jwt'), authorization('user'), authorization('admin'), postProdCart)
-cartRouter.put('/:cid/products/:pid', passportError('jwt'), authorization('user'), authorization('admin'), putProdCart)
+cartRouter.put('/:cid/products/:pid', passportError('jwt'), authorization('admin'), putProdCart)
 cartRouter.delete('/:cid/products/:pid', passportError('jwt'), authorization('user'), authorization('admin'), deleteProdCart);
 cartRouter.post('/:cid/purchase', passportError('jwt'), authorization('user'), authorization('admin'), postTicket)
 
