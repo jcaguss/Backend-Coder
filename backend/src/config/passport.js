@@ -12,12 +12,11 @@ const JWTStrategy = jwt.Strategy;
 const ExtractJWT = jwt.ExtractJwt;
 
 const initializePassport = () => {
-
-  const cookieExtractor = req => {
+  const cookieExtractor = (req) => {
     //const token = req.headers.authorization ? req.headers.authorization : {}
-    const token = req.cookies.jwtCookie ? req.cookies.jwtCookie : {}
-    return token
-}
+    const token = req.cookies.jwtCookie ? req.cookies.jwtCookie : {};
+    return token;
+  };
 
   passport.use(
     "jwt",
@@ -129,7 +128,7 @@ const initializePassport = () => {
   });
   // ---- Eliminamos la session del usuario ----
   passport.deserializeUser(async (id, done) => {
-    const user = await userModel.findById( id );
+    const user = await userModel.findById(id);
     done(null, user);
   });
 };

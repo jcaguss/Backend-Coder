@@ -38,8 +38,7 @@ app.listen(PORT, () => {
   console.log(`Server on port ${PORT}`);
 });
 
-console.log(__dirname)
-
+console.log(__dirname);
 
 // ---------  Nodemailer  ---------
 

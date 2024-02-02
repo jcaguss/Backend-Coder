@@ -77,14 +77,14 @@ describe("Test de CRUD de Productos en ruta api/products", function () {
       code: "AUTO1414",
       price: 1234,
       stock: 1234,
-      category: "Veiculos"
+      category: "Veiculos",
     };
     const { statusCode, _body, ok } = await requester
       .post("/api/products")
       .set("Authorization", [`${cookie.value}`])
       .send(newProd);
-    expect(statusCode).to.be.equal(201)
-    expect(_body.respuesta).to.be.equal('ok')
+    expect(statusCode).to.be.equal(201);
+    expect(_body.respuesta).to.be.equal("ok");
     expect(ok).to.be.ok;
 
     // console.log(_body)
@@ -120,7 +120,7 @@ describe("Test Carts ruta api/carts", function () {
   it("Ruta api/cats metodo POST", async () => {
     const cid = "65ad7dae3bef32e4cb263a57";
     const pid = "65503d0ed26df8d639855636";
-    const {ok} = await requester
+    const { ok } = await requester
       .post(`/api/carts/${cid}/products/${pid}`)
       .set("Authorization", [`${cookie.value}`]);
     console.log(ok);

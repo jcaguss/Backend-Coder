@@ -48,7 +48,7 @@ export const deleteProdtsCart = async (req, res) => {
     if (!cart) {
       res.status(404).send({ error: "Carrito no encontrado" });
     } else {
-      cart.products = []
+      cart.products = [];
       await cartModel.findByIdAndUpdate(id, cart);
       res.status(200).send({ respuesta: "ok", mensaje: cart });
     }
